@@ -25,10 +25,6 @@ class TestSet
   # TestSet.new(1, 2, 3, 4, 5, 6).partition(2) => [[1, 2, 3], [4, 5, 6]]
   def partition(n)
     subset_size = (@array.size.to_f / n).ceil
-    result = []
-    n.times do |i|
-      result << @array[i * subset_size, subset_size]
-    end
-    result
+    (0...n).collect {|i| @array[i * subset_size, subset_size]}
   end
 end
