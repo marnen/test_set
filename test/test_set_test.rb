@@ -19,6 +19,12 @@ class TestSetTest < Test::Unit::TestCase
     assert_equal 6, TestSet.new(8, 10, 2, 6, 4).median
     assert_equal 4.5, TestSet.new(10, 0, 1, 9, 8, 1).median
   end
+  
+  # Average and median should work with string representations of numbers.
+  def test_average_and_median_should_understand_strings
+    assert_equal 6, TestSet.new(8, 10, '2', 6, 4).average
+    assert_equal 4.5, TestSet.new('10', 0, 1, '9', 8, 1).median
+  end
 
   def test_should_split_into_evenly_sized_subsets
     values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
