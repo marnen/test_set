@@ -1,3 +1,4 @@
+require 'test/unit'
 require File.dirname(__FILE__) + '/../test_set'
 
 class TestSetTest < Test::Unit::TestCase
