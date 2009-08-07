@@ -1,7 +1,7 @@
 class TestSet
   # Constructs a new TestSet object with any number of arguments.
   def initialize(*args)
-    @array = args.collect {|a| a.to_i}
+    @array = args.collect {|a| a.kind_of?(Numeric) ? a : a.to_f}
   end
   
   # Returns the average of all the elements in the set.

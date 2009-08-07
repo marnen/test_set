@@ -20,10 +20,17 @@ class TestSetTest < Test::Unit::TestCase
     assert_equal 4.5, TestSet.new(10, 0, 1, 9, 8, 1).median
   end
   
+  # Average and median should work properly with floating-point numbers in set.
+  def test_should_understand_floating_point
+    assert_equal 1.75, TestSet.new(2.5, 1).average
+    assert_equal 0.2, TestSet.new(0.2, 0.1, 8).median
+  end
+  
   # Average and median should work with string representations of numbers.
   def test_average_and_median_should_understand_strings
     assert_equal 6, TestSet.new(8, 10, '2', 6, 4).average
     assert_equal 4.5, TestSet.new('10', 0, 1, '9', 8, 1).median
+    assert_equal 0.2, TestSet.new(0.2, '0.1', 8).median
   end
 
   def test_should_split_into_evenly_sized_subsets
