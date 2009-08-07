@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/../test_set'
+
 class TestSetTest < Test::Unit::TestCase
 
   def setup
